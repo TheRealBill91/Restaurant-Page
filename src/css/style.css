@@ -1,4 +1,4 @@
-body {}
+/* Parent content styling */
 
 #content {
     display: grid;
@@ -6,10 +6,73 @@ body {}
         "head head head"
         "main main main"
         "foot foot foot";
-    grid-template-rows: 50px auto 50px;
+    grid-template-rows: 60px auto 60px;
     height: 100vh;
 }
 
+
+header {
+    grid-area: head;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 4px;
+    align-items: center;
+
+}
+
+
+
+header>p {
+    margin-left: 10px;
+}
+
+nav>ul {
+    display: flex;
+    gap: 14px;
+    justify-content: space-evenly;
+
+}
+
+ul>li {
+
+    list-style: none;
+}
+
+li>button {
+    width: 65px;
+    height: 35px;
+    font-size: 0.8rem;
+}
+
+/* Main (middle) content styling */
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+}
+
+.headLine {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    background-color: rgb(165, 165, 165);
+    align-items: center;
+}
+
+.headLine>p {
+    font-size: 1.4rem;
+}
+
+.backgroundImage>button {
+    width: 85px;
+    height: 60px;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.555);
+    border: none;
+}
 
 .backgroundImage {
     background-image: url(../assets/mountain-background.jpg);
@@ -22,6 +85,7 @@ body {}
     flex-direction: column;
     gap: 8px;
     flex: 1 auto;
+    padding: 0px 14px;
 }
 
 .backgroundImage>p {
@@ -38,55 +102,13 @@ body {}
     background-color: rgba(0, 0, 0, 0.815);
 }
 
-header {
-    grid-area: head;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 4px;
-    align-items: center;
 
-}
-
-.headLine {
-    display: flex;
-    justify-content: center;
-    height: 150px;
-    background-color: rgb(221, 221, 221);
-    align-items: center;
-}
-
-.headLine>p {
-    font: 1.2rem;
-}
-
-header>p {
-    margin-left: 10px;
-}
-
-ul {
-    display: flex;
-    gap: 6px;
-}
-
-ul>li {
-    list-style: none;
-}
-
-main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-}
-
-.backgroundImage>button {
-    width: 80px;
-    height: 50px;
-    padding: 12px;
-    font-size: 1.1rem;
-}
+/* footer styling */
 
 footer {
     grid-area: foot;
     background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
