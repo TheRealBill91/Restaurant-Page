@@ -1,9 +1,9 @@
-import "./css/normalize.css";
-import "./css/style.css";
+import "./normalize.css";
+import "./home.css";
 
 // loads home page using DOM
 const homePageLoad = () => {
-const renderHeader = () => {
+  const renderHeader = () => {
     const header = document.createElement("header");
 
     // function creates and renders content inside of header element
@@ -24,6 +24,7 @@ const renderHeader = () => {
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
       button = document.createElement("button");
+      button.classList.add(`page-${i + 1}`);
       button.textContent = `Page ${i + 1}`;
       li.appendChild(button);
       ul.appendChild(li);
