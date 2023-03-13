@@ -1,108 +1,110 @@
-#content {
-    display: grid;
-    grid-template-areas:
-        "head head head"
-        "main main main"
-        "foot foot foot";
-    grid-template-rows: 60px auto 60px;
-    height: 100vh;
+ #content {
+  display: grid;
+  grid-template-areas:
+    "head head head"
+    "main main main"
+    "foot foot foot";
+  grid-template-rows: 60px auto 60px;
+  height: 100vh;
 }
+
+/* Start of menu header */
 
 header {
-    grid-area: head;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 4px;
-    align-items: center;
-    grid-area: head;
+  grid-area: head;
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 4px;
+  align-items: center;
+  grid-area: head;
 }
 
-header>p {
-    margin-left: 10px;
+header > p {
+  margin-left: 10px;
 }
 
-nav>ul {
-    display: flex;
-    gap: 14px;
-    justify-content: space-evenly;
+nav > ul {
+  display: flex;
+  gap: 14px;
+  justify-content: space-evenly;
 }
 
-ul>li {
-    list-style: none;
+ul > li {
+  list-style: none;
 }
 
-li>button {
-    width: 65px;
-    height: 35px;
-    font-size: 0.8rem;
+li > button {
+  width: 65px;
+  height: 35px;
+  font-size: 0.8rem;
 }
 
 /* Start of main content (for menu page) */
 
-main {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-area: main;
+.menu-page main {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-area: main;
 }
 
-main>div {
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
+.menu-page main > div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
 }
 
-.startersLabel {
-    grid-row: 1/2;
-    align-self: center;
-    font-size: 1.5rem;
+.menu-page .startersLabel {
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 1.5rem;
 }
 
-.entreesLabel {
-    grid-row: 1/2;
-    align-self: center;
-    font-size: 1.5rem;
+.menu-page .entreesLabel {
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 1.5rem;
 }
 
-.dessertsLabel {
-    grid-row: 1/2;
-    align-self: center;
-    font-size: 1.5rem;
+.menu-page .dessertsLabel {
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 1.5rem;
 }
 
-.startersContainer {
-    grid-row: 1/2;
-    padding: 8px;
+.menu-page .startersContainer {
+  grid-row: 1/2;
+  padding: 8px;
 }
 
-main>div>div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
+.menu-page main > div > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
 }
 
-main>div>div>div {
-    height: 250px;
-    outline: 1px;
-    outline: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.menu-page main > div > div > div {
+  height: 250px;
+  outline: 1px;
+  outline: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-main>div>div>div>p {
-    font-size: 1.4rem;
+.menu-page main > div > div > div > p {
+  font-size: 1.4rem;
 }
 
-main>div>div>div>p:last-of-type {
-    width: 80%;
+.menu-page > div > div > div > p:last-of-type {
+  width: 80%;
 }
 
 footer {
-    grid-area: foot;
-    background-color: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-area: foot;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

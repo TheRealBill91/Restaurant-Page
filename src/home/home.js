@@ -1,4 +1,4 @@
-import "./normalize.css";
+// import "./normalize.css";
 import "./home.css";
 
 // loads home page using DOM
@@ -21,11 +21,12 @@ const homePageLoad = () => {
     let li;
     let button;
 
+    const pageNames = ["Home", "Menu", "Contact"];
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
       button = document.createElement("button");
       button.classList.add(`page-${i + 1}`);
-      button.textContent = `Page ${i + 1}`;
+      button.textContent = pageNames[i];
       li.appendChild(button);
       ul.appendChild(li);
     }
@@ -37,6 +38,8 @@ const homePageLoad = () => {
 
   const renderMain = () => {
     const main = document.createElement("main");
+    // allows us to keep our css files specific to the current page
+    main.classList.add("home-page");
 
     // Create head line for top of home page with p element for text
     const headLine = document.createElement("div");

@@ -1,4 +1,4 @@
-import "./normalize.css";
+// import "./normalize.css";
 import "./menu.css";
 
 const menuPageLoad = () => {
@@ -20,11 +20,12 @@ const menuPageLoad = () => {
     let li;
     let button;
 
+    const pageNames = ["Home", "Menu", "Contact"];
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
       button = document.createElement("button");
       button.classList.add(`page-${i + 1}`);
-      button.textContent = `Page ${i + 1}`;
+      button.textContent = pageNames[i];
       li.appendChild(button);
       ul.appendChild(li);
     }
@@ -35,10 +36,12 @@ const menuPageLoad = () => {
   };
 
   const renderMain = () => {
-    const main = document.createElement('main');
+    const main = document.createElement("main");
+    // allows us to keep our css files specific to the current page
+    main.classList.add("menu-page");
 
     // Start of starters container
-    const startersContainer = document.createElement('div');
+    const startersContainer = document.createElement("div");
     startersContainer.classList.add("startersContainer");
 
     const startersLabel = document.createElement("p");
@@ -59,7 +62,8 @@ const menuPageLoad = () => {
     oystersTitleAndPrice.textContent = "Roasted Oysters ($18)";
     const oystersDescription = document.createElement("p");
     oystersDescription.classList.add("description");
-    oystersDescription.textContent = " Enjoy the briny flavor of fresh oysters roasted in garlic butter and served with a squeeze of lemon.";
+    oystersDescription.textContent =
+      " Enjoy the briny flavor of fresh oysters roasted in garlic butter and served with a squeeze of lemon.";
 
     roastedOysters.append(oystersTitleAndPrice, oystersDescription);
 
@@ -72,7 +76,8 @@ const menuPageLoad = () => {
     beefTartareTitleAndPrice.textContent = "Beef Tartare ($22)";
     const beefTartareDescription = document.createElement("p");
     beefTartareDescription.classList.add("description");
-    beefTartareDescription.textContent = "A classic dish of finely chopped raw beef seasoned with capers, mustard and a quail egg on top";
+    beefTartareDescription.textContent =
+      "A classic dish of finely chopped raw beef seasoned with capers, mustard and a quail egg on top";
 
     beefTartare.append(beefTartareTitleAndPrice, beefTartareDescription);
 
@@ -85,16 +90,17 @@ const menuPageLoad = () => {
     articCharTitleAndPrice.textContent = "Arctic Char ($20)";
     const articCharDescription = document.createElement("p");
     articCharDescription.classList.add("description");
-    articCharDescription.textContent = " A delicate fish cured with citrus and served with a crisp fennel salad and a dollop of dill cream.";
+    articCharDescription.textContent =
+      " A delicate fish cured with citrus and served with a crisp fennel salad and a dollop of dill cream.";
 
     articChar.append(articCharTitleAndPrice, articCharDescription);
 
-    // append menu items to starters div, and starters div to starters container 
+    // append menu items to starters div, and starters div to starters container
     starters.append(roastedOysters, beefTartare, articChar);
     startersContainer.appendChild(starters);
 
     // Start of entrees container
-    const entreesContainer = document.createElement('div');
+    const entreesContainer = document.createElement("div");
     entreesContainer.classList.add("entreesContainer");
 
     const entreesLabel = document.createElement("p");
@@ -115,7 +121,8 @@ const menuPageLoad = () => {
     skateTitleAndPrice.textContent = "Skate ($36)";
     const skateDescription = document.createElement("p");
     skateDescription.classList.add("description");
-    skateDescription.textContent = "A tender fillet of skate pan-fried in brown butter and garnished with capers and parsley.";
+    skateDescription.textContent =
+      "A tender fillet of skate pan-fried in brown butter and garnished with capers and parsley.";
 
     skate.append(skateTitleAndPrice, skateDescription);
 
@@ -128,7 +135,8 @@ const menuPageLoad = () => {
     lambTitleAndPrice.textContent = "Lamb ($42)";
     const lambDescription = document.createElement("p");
     lambDescription.classList.add("description");
-    lambDescription.textContent = "A succulent cut of lamb roasted to perfection and accompanied by a tangy mint sauce and crispy potatoes.";
+    lambDescription.textContent =
+      "A succulent cut of lamb roasted to perfection and accompanied by a tangy mint sauce and crispy potatoes.";
 
     lamb.append(lambTitleAndPrice, lambDescription);
 
@@ -141,17 +149,17 @@ const menuPageLoad = () => {
     porkShoulderTitleAndPrice.textContent = "Pork Shoulder ($38)";
     const porkShoulderDescription = document.createElement("p");
     porkShoulderDescription.classList.add("description");
-    porkShoulderDescription.textContent = "A hearty portion of pork shoulder braised until fork-tender and topped with a sweet and spicy apple chutney. Served with mashed sweet potatoes.";
+    porkShoulderDescription.textContent =
+      "A hearty portion of pork shoulder braised until fork-tender and topped with a sweet and spicy apple chutney. Served with mashed sweet potatoes.";
 
     porkShoulder.append(porkShoulderTitleAndPrice, porkShoulderDescription);
 
-    // append menu items to starters div, and starters div to starters container 
+    // append menu items to starters div, and starters div to starters container
     entrees.append(skate, lamb, porkShoulder);
     entreesContainer.appendChild(entrees);
 
-
     // Start of desserts container
-    const dessertsContainer = document.createElement('div');
+    const dessertsContainer = document.createElement("div");
     dessertsContainer.classList.add("dessertsContainer");
 
     const dessertsLabel = document.createElement("p");
@@ -172,9 +180,13 @@ const menuPageLoad = () => {
     chocolateMousseTitleAndPrice.textContent = "Chocolate Mousse ($12)";
     const chocolateMousseDescription = document.createElement("p");
     chocolateMousseDescription.classList.add("description");
-    chocolateMousseDescription.textContent = "A decadent dessert of rich chocolate mousse topped with whipped cream and fresh raspberries.";
+    chocolateMousseDescription.textContent =
+      "A decadent dessert of rich chocolate mousse topped with whipped cream and fresh raspberries.";
 
-    chocolateMousse.append(chocolateMousseTitleAndPrice, chocolateMousseDescription);
+    chocolateMousse.append(
+      chocolateMousseTitleAndPrice,
+      chocolateMousseDescription
+    );
 
     // Start of apple pie menu item
     const applePie = document.createElement("div");
@@ -185,7 +197,8 @@ const menuPageLoad = () => {
     applePieTitleAndPrice.textContent = "Apple Pie ($10)";
     const applePieDescription = document.createElement("p");
     applePieDescription.classList.add("description");
-    applePieDescription.textContent = "A warm slice of homemade apple pie filled with cinnamon-spiced apples and drizzled with caramel sauce. Served with vanilla ice cream.";
+    applePieDescription.textContent =
+      "A warm slice of homemade apple pie filled with cinnamon-spiced apples and drizzled with caramel sauce. Served with vanilla ice cream.";
 
     applePie.append(applePieTitleAndPrice, applePieDescription);
 
@@ -198,19 +211,22 @@ const menuPageLoad = () => {
     lemonCheesecakeTitleAndPrice.textContent = "Lemon Cheesecake ($11)";
     const lemonCheesecakeDescription = document.createElement("p");
     lemonCheesecakeDescription.classList.add("description");
-    lemonCheesecakeDescription.textContent = "A creamy cheesecake flavored with lemon zest and baked on a graham cracker crust. Served with a blueberry compote.";
+    lemonCheesecakeDescription.textContent =
+      "A creamy cheesecake flavored with lemon zest and baked on a graham cracker crust. Served with a blueberry compote.";
 
-    lemonCheesecake.append(lemonCheesecakeTitleAndPrice, lemonCheesecakeDescription);
+    lemonCheesecake.append(
+      lemonCheesecakeTitleAndPrice,
+      lemonCheesecakeDescription
+    );
 
-    // append menu items to starters div, and starters div to starters container 
+    // append menu items to starters div, and starters div to starters container
     desserts.append(chocolateMousse, applePie, lemonCheesecake);
     dessertsContainer.appendChild(desserts);
 
     // append menu items inside main element
     main.append(startersContainer, entreesContainer, dessertsContainer);
     return main;
-
-  }
+  };
 
   const renderFooter = () => {
     const footer = document.createElement("footer");
