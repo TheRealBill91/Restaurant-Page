@@ -1,12 +1,35 @@
+@font-face {
+  font-family: Playfair Display;
+  src: url(../assets/fonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  --header-logo-font: "Playfair Display", serif, "Times New Roman", sans-serif,
+    "Open Sans", Arial, sans-serif;
+  --home-tagline: "Poppins", sans-serif, "Times New Roman", sans-serif,
+    "Open Sans", Arial, sans-serif;
+  --home-default: "Roboto", serif, "Open Sans", Arial;
+}
+
 /* Parent content styling */
 
-#content {
+ .home-page {
   display: grid;
   grid-template-areas:
     "head head head"
     "main main main"
     "foot foot foot";
-  grid-template-rows: 60px auto 60px;
+  grid-template-rows: 80px auto 60px;
   height: 100vh;
 }
 
@@ -21,8 +44,19 @@ header {
   align-items: center;
 }
 
+.home-page button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.466);
+  backdrop-filter: blur(2px);
+  color: black;
+}
+
 header > p {
   margin-left: 10px;
+  font-family: var(--header-logo-font);
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 nav > ul {
@@ -31,8 +65,23 @@ nav > ul {
   justify-content: space-evenly;
 }
 
+.home-page ul > li:first-of-type {
+    border-bottom: 2px solid black;
+    height: 55px;
+}
+
 ul > li {
-  list-style: none;
+    list-style: none;
+    /* outline: 1px solid blue; */
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    border-bottom-color: lightblue;
+    border-bottom-style: solid;
+    margin-bottom: 4px;
 }
 
 li > button {
@@ -52,13 +101,14 @@ li > button {
 .home-page .headLine {
   display: flex;
   justify-content: center;
-  height: 150px;
+  height: 125px;
   background-color: rgb(165, 165, 165);
   align-items: center;
 }
 
 .home-page .headLine > p {
   font-size: 1.4rem;
+  font-family: var(--home-tagline);
 }
 
 .home-page .backgroundImage > button {
@@ -81,14 +131,26 @@ li > button {
   flex-direction: column;
   gap: 8px;
   flex: 1 auto;
-  padding: 0px 14px;
+  padding: 0px 20px;
 }
 
 .home-page .backgroundImage > p {
   background-color: rgba(0, 0, 0, 0.26);
+  /* filter: blur(0.5rem); */
   padding: 16px;
+  font-family: var(--home-default);
   border-radius: 12px 12px;
   font-size: 1.4rem;
+  line-height: 1.8rem;
+  backdrop-filter: blur(4px);
+  box-shadow: #808080c2 0px 2px 6px 1px;
+}
+
+.home-page .backgroundImage > p::before {
+  background-color: rgba(0, 0, 0, 0.26);
+  filter: blur(0.5rem);
+  padding: 16px;
+  border-radius: 12px 12px;
 }
 
 /* Come back to this to add color overlay to bg image */
@@ -99,10 +161,11 @@ li > button {
 
 /* footer styling */
 
-footer {
+.home-page footer {
   grid-area: foot;
   background-color: lightblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--home-default);
 }

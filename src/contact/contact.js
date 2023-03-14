@@ -22,6 +22,9 @@ const contactPageLoad = () => {
     const pageNames = ["Home", "Menu", "Contact"];
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
+      if (pageNames[i] === "Contact") {
+        li.style.borderBottomColor = "black";
+      }
       button = document.createElement("button");
       button.classList.add(`page-${i + 1}`);
       button.textContent = pageNames[i];

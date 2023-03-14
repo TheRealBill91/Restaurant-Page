@@ -23,6 +23,9 @@ const menuPageLoad = () => {
     const pageNames = ["Home", "Menu", "Contact"];
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
+      if (pageNames[i] === "Menu"){
+        li.style.borderBottomColor = "black";
+      }
       button = document.createElement("button");
       button.classList.add(`page-${i + 1}`);
       button.textContent = pageNames[i];
@@ -38,7 +41,7 @@ const menuPageLoad = () => {
   const renderMain = () => {
     const main = document.createElement("main");
     // allows us to keep our css files specific to the current page
-    main.classList.add("menu-page");
+    main.classList.add("menu-main");
 
     // Start of starters container
     const startersContainer = document.createElement("div");

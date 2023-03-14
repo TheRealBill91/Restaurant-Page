@@ -24,6 +24,10 @@ const homePageLoad = () => {
     const pageNames = ["Home", "Menu", "Contact"];
     for (let i = 0; i < 3; i++) {
       li = document.createElement("li");
+      li.classList.add(`li-${i + 1}`);
+      if (pageNames[i] === "Home"){
+        li.style.borderBottomColor = "black";
+      }
       button = document.createElement("button");
       button.classList.add(`page-${i + 1}`);
       button.textContent = pageNames[i];

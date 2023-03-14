@@ -32,6 +32,8 @@ function loadContactPage() {
   contentContainer.appendChild(contactPageLoad().renderHeader());
   contentContainer.appendChild(contactPageLoad().renderMain());
   contentContainer.appendChild(contactPageLoad().renderFooter());
+
+
 }
 
 function pageSwitcher() {
@@ -40,8 +42,8 @@ function pageSwitcher() {
   const contactButton = document.querySelector(".page-3");
   const contentContainer = document.getElementById("content");
 
+
   homeButton.addEventListener("click", () => {
-    // for extra styling
     contentContainer.innerHTML = "";
     loadHomePage();
     pageSwitcher();

@@ -1,10 +1,20 @@
- #content {
+@font-face {
+  font-family: Lora;
+  src: url(../assets/fonts/Lora-Regular.ttf);
+}
+
+:root {
+  --menu-font: "Lora", serif, "Times New Roman";
+  --menu-default-font: "Roboto", serif, "Times New Roman";
+}
+
+.menu-page {
   display: grid;
   grid-template-areas:
     "head head head"
     "main main main"
     "foot foot foot";
-  grid-template-rows: 60px auto 60px;
+  grid-template-rows: 80px auto 60px;
   height: 100vh;
 }
 
@@ -24,6 +34,13 @@ header > p {
   margin-left: 10px;
 }
 
+.menu-page button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.466);
+  backdrop-filter: blur(2px);
+  color: black;
+}
+
 nav > ul {
   display: flex;
   gap: 14px;
@@ -32,6 +49,16 @@ nav > ul {
 
 ul > li {
   list-style: none;
+  /* outline: 1px solid blue; */
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  border-bottom-color: lightblue;
+  border-bottom-style: solid;
+  margin-bottom: 4px;
 }
 
 li > button {
@@ -44,8 +71,13 @@ li > button {
 
 .menu-page main {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-area: main;
+  grid-auto-rows: 1fr 1fr 1fr;
+  padding: 14px 19px;
+}
+
+.menu-page main > * {
+  font-family: var(--menu-font);
 }
 
 .menu-page main > div {
@@ -80,7 +112,7 @@ li > button {
 .menu-page main > div > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+  gap: 22px;
 }
 
 .menu-page main > div > div > div {
@@ -91,14 +123,15 @@ li > button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 12px;
 }
 
-.menu-page main > div > div > div > p {
+.menu-page main > div > div > div > p:last-child {
+  font-size: 1.2rem;
+}
+
+.menu-page main > div > div > div > p:first-child {
   font-size: 1.4rem;
-}
-
-.menu-page > div > div > div > p:last-of-type {
-  width: 80%;
 }
 
 footer {
