@@ -1,76 +1,77 @@
 @font-face {
-  font-family: Playfair Display;
-  src: url(../assets/fonts/PlayfairDisplay-Regular.ttf);
+    font-family: Playfair Display;
+    src: url(../assets/fonts/PlayfairDisplay-Regular.ttf);
 }
 
 @font-face {
-  font-family: Poppins;
-  src: url(../assets/fonts/Poppins-Medium.ttf);
+    font-family: Poppins;
+    src: url(../assets/fonts/Poppins-Medium.ttf);
 }
 
 @font-face {
-  font-family: Roboto;
-  src: url(../assets/fonts/Roboto-Regular.ttf);
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
 }
 
 :root {
-  --header-logo-font: "Playfair Display", serif, "Times New Roman", sans-serif,
-    "Open Sans", Arial, sans-serif;
-  --home-tagline: "Poppins", sans-serif, "Times New Roman", sans-serif,
-    "Open Sans", Arial, sans-serif;
-  --home-default: "Roboto", serif, "Open Sans", Arial;
+    --header-logo-font: "Playfair Display", serif, "Times New Roman", sans-serif,
+        "Open Sans", Arial, sans-serif;
+    --home-tagline: "Poppins", sans-serif, "Times New Roman", sans-serif,
+        "Open Sans", Arial, sans-serif;
+    --home-default: "Roboto", serif, "Open Sans", Arial;
 }
 
 /* Parent content styling */
 
- .home-page {
-  display: grid;
-  grid-template-areas:
-    "head head head"
-    "main main main"
-    "foot foot foot";
-  grid-template-rows: 80px auto 60px;
-  height: 100vh;
+.home-page {
+    display: grid;
+    grid-template-areas:
+        "head head head"
+        "main main main"
+        "foot foot foot";
+    grid-template-rows: 80px auto 60px;
+    height: 100vh;
 }
 
 /* Start of home header */
 
 header {
-  grid-area: head;
-  background-color: lightblue;
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 4px;
-  align-items: center;
+    grid-area: head;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 4px;
+    align-items: center;
+    grid-area: head;
+    position: relative;
+    z-index: 2;
+    box-shadow: 1px 4px 5px 0px #80808075;
 }
 
 .home-page button {
-  border: none;
-  background-color: rgba(255, 255, 255, 0.466);
-  backdrop-filter: blur(2px);
-  color: black;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.466);
+    backdrop-filter: blur(2px);
+    color: black;
 }
 
-header > p {
-  margin-left: 10px;
-  font-family: var(--header-logo-font);
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  font-weight: 900;
+header>p {
+    margin-left: 10px;
+    font-family: var(--header-logo-font);
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
-nav > ul {
-  display: flex;
-  gap: 14px;
-  justify-content: space-evenly;
+nav>ul {
+    display: flex;
+    gap: 14px;
+    justify-content: space-evenly;
 }
 
-.home-page ul > li:first-of-type {
-    border-bottom: 2px solid black;
-    height: 55px;
-}
+.home-page ul>li:first-of-type {}
 
-ul > li {
+ul>li {
     list-style: none;
     /* outline: 1px solid blue; */
     height: 55px;
@@ -84,88 +85,90 @@ ul > li {
     margin-bottom: 4px;
 }
 
-li > button {
-  width: 65px;
-  height: 35px;
-  font-size: 0.8rem;
+li>button {
+    width: 65px;
+    height: 35px;
+    font-size: 0.8rem;
 }
 
 /* Main (middle) content styling */
 
 .home-page main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
 }
 
 .home-page .headLine {
-  display: flex;
-  justify-content: center;
-  height: 125px;
-  background-color: rgb(165, 165, 165);
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 125px;
+    background-color: rgb(165, 165, 165);
+    align-items: center;
 }
 
-.home-page .headLine > p {
-  font-size: 1.4rem;
-  font-family: var(--home-tagline);
+.home-page .headLine>p {
+    font-size: 1.4rem;
+    font-family: var(--home-tagline);
+    text-align: center;
 }
 
-.home-page .backgroundImage > button {
-  width: 85px;
-  height: 60px;
-  padding: 12px;
-  font-size: 1.1rem;
-  background-color: rgba(255, 255, 255, 0.555);
-  border: none;
+.home-page .backgroundImage>button {
+    width: 85px;
+    height: 60px;
+    padding: 12px;
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.555);
+    border: none;
 }
 
 .home-page .backgroundImage {
-  background-image: url(../assets/mountain-background.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1 auto;
-  padding: 0px 20px;
+    background-image: url(../assets/mountain-background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 auto;
+    padding: 0px 20px;
 }
 
-.home-page .backgroundImage > p {
-  background-color: rgba(0, 0, 0, 0.26);
-  /* filter: blur(0.5rem); */
-  padding: 16px;
-  font-family: var(--home-default);
-  border-radius: 12px 12px;
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  backdrop-filter: blur(4px);
-  box-shadow: #808080c2 0px 2px 6px 1px;
+.home-page .backgroundImage>p {
+    background-color: rgba(0, 0, 0, 0.26);
+    /* filter: blur(0.5rem); */
+    padding: 16px;
+    font-family: var(--home-default);
+    border-radius: 12px 12px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: #808080c2 0px 2px 6px 1px;
 }
 
-.home-page .backgroundImage > p::before {
-  background-color: rgba(0, 0, 0, 0.26);
-  filter: blur(0.5rem);
-  padding: 16px;
-  border-radius: 12px 12px;
+.home-page .backgroundImage>p::before {
+    background-color: rgba(0, 0, 0, 0.26);
+    filter: blur(0.5rem);
+    padding: 16px;
+    border-radius: 12px 12px;
 }
 
 /* Come back to this to add color overlay to bg image */
 .home-page .backgroundImage::after {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.815);
+    content: "";
+    background-color: rgba(0, 0, 0, 0.815);
 }
 
 /* footer styling */
 
 .home-page footer {
-  grid-area: foot;
-  background-color: lightblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: var(--home-default);
+    grid-area: foot;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--home-default);
 }
